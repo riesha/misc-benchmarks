@@ -3,16 +3,27 @@ name = "misc-benchmarks"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[[bin]]
+name = "misc-benchmarks"
+bench = false
 
 [dependencies]
 tokio = { version = "1.21.1", features = ["full"] }
 bcrypt = "0.13.0"
 rayon = "1.5.3"
 rand = "0.8.5"
+rosu-pp = "0.8.0"
+serde = "1.0.145"
+serde_json = "1.0.85"
+plotters = "0.3.4"
+
 [dev-dependencies]
 criterion = "0.4.0"
 
 [[bench]]
 name = "bcrypt_benchmark"
+harness = false
+
+[[bench]]
+name = "osu_benchmark"
 harness = false
